@@ -1,4 +1,4 @@
-import "./category-item.styles.scss";
+import { BackgroundImage, Body, DirectoryItemContainer } from "./category-item.styles";
 import { useNavigate } from "react-router-dom";
 
 const CategoryItem = ({ category }) => {
@@ -8,18 +8,13 @@ const CategoryItem = ({ category }) => {
         navigate(`/shop/${title.toLowerCase()}`);
     };
     return (
-        <div className="category-item-container" onClick={handleSelectCategory}>
-            <div
-                className="background-image"
-                style={{
-                    backgroundImage: `url(${imageUrl})`,
-                }}
-            />
-            <div className="category-body-container">
+        <DirectoryItemContainer onClick={handleSelectCategory}>
+            <BackgroundImage imageUrl={imageUrl} />
+            <Body>
                 <h2>{title}</h2>
                 <p>Shop now</p>
-            </div>
-        </div>
+            </Body>
+        </DirectoryItemContainer>
     );
 };
 
