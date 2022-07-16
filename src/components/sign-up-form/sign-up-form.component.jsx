@@ -2,7 +2,7 @@ import { useState, Fragment } from "react";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 import FormInput from "../form-input/form-input.component";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
-import "./sign-up-form.style.scss";
+import { SignUpContainer } from "./sign-up-form.style";
 
 const defaultFormFields = {
     displayName: "",
@@ -48,7 +48,7 @@ const SignUpForm = () => {
 
     return (
         <Fragment>
-            <div className="sign-up-container">
+            <SignUpContainer>
                 <h2>Don't have an account?</h2>
                 <span>SignUp with your EMail and Password</span>
                 <form onSubmit={handleSubmit}>
@@ -88,7 +88,7 @@ const SignUpForm = () => {
                         Sign Up
                     </Button>
                 </form>
-            </div>
+            </SignUpContainer>
         </Fragment>
     );
 };
