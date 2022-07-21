@@ -22,9 +22,7 @@ const Category = () => {
 
     return (
         <Fragment>
-            <h2>
-                <Title onClick={handleBackArrow}>{category.toUpperCase()}</Title>
-            </h2>
+            <Title onClick={handleBackArrow}>{category.toUpperCase()}</Title>
             <CategoryContainer>
                 {products && products.map((product) => <ProductCard key={product.id} product={product} />)}
             </CategoryContainer>
