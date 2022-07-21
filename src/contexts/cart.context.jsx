@@ -1,4 +1,4 @@
-import { useState, createContext, useReducer } from "react";
+import { createContext, useReducer } from "react";
 
 const addCartItem = (cartItems, productToAdd) => {
     const existingCartItem = cartItems.find((value) => value.id === productToAdd.id);
@@ -34,12 +34,12 @@ const removeCartItem = (cartItems, productToRemove) =>
 export const CartContext = createContext({
     cart: [],
     cartOpen: false,
+    quantitySum: 0,
+    priceSum: 0,
     setCartOpen: () => {},
     addItemToCart: (productToAdd) => {},
     reduceItemFromCart: (productToDecrease) => {},
     removeItemFromCart: (productToRemove) => {},
-    quantitySum: 0,
-    priceSum: 0,
 });
 
 export const CART_ACTION_TYPE = {
@@ -105,13 +105,13 @@ export const CartProvider = ({ children }) => {
 
     const value = {
         cart,
+        cartOpen,
+        quantitySum,
+        priceSum,
+        setCartOpen,
         addItemToCart,
         reduceItemFromCart,
         removeItemFromCart,
-        cartOpen,
-        setCartOpen,
-        quantitySum,
-        priceSum,
     };
     return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
