@@ -77,7 +77,7 @@ export const CartProvider = ({ children }) => {
         const newCartQuantity = newCartItems.reduce((prevValue, value) => prevValue + value.quantity, 0);
         const newCartTotal = newCartItems.reduce((prevValue, value) => prevValue + value.quantity * value.price, 0);
 
-        const payload = { newCartItems, newCartQuantity, newCartTotal };
+        const payload = { cart: newCartItems, quantitySum: newCartQuantity, priceSum: newCartTotal };
 
         dispatch({ type: CART_ACTION_TYPE.SET_NEW_CART, payload });
     };
