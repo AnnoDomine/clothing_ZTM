@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
 import App from "./App";
@@ -13,17 +13,17 @@ import { store } from "./store/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <React.StrictMode>
+    <Fragment>
         <BrowserRouter>
             <Provider store={store}>
-                <UserProvider>
-                    <CartProvider>
-                        <App />
-                    </CartProvider>
-                </UserProvider>
+                {/*<UserProvider>*/}
+                <CartProvider>
+                    <App />
+                </CartProvider>
+                {/*</UserProvider>*/}
             </Provider>
         </BrowserRouter>
-    </React.StrictMode>
+    </Fragment>
 );
 
 // If you want to start measuring performance in your app, pass a function
