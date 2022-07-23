@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 
-import { selectCurrentUser } from "../../store/user.selector";
+import { selectCurrentUser } from "../../store/user/user.selector";
 
 import { ReactComponent as ClothingsLogo } from "../../assets/crown.svg";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
