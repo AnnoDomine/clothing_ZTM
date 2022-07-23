@@ -2,6 +2,7 @@ import { useState, useEffect, Fragment } from "react";
 import { useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import ProductCard from "../../components/product-card/product-card.component";
+import { selectCartItems } from "../../store/cart/cart.selector";
 import { categoriesSelector } from "../../store/categories/category.selector";
 
 import { CategoryContainer, Title } from "./category.styles";
@@ -9,6 +10,7 @@ import { CategoryContainer, Title } from "./category.styles";
 const Category = () => {
     const { category } = useParams();
     const categoriesMap = useSelector(categoriesSelector);
+    const cart = useSelector(selectCartItems);
     const navigate = useNavigate();
 
     const [products, setProducts] = useState(categoriesMap[category]);
@@ -25,7 +27,7 @@ const Category = () => {
         <Fragment>
             <Title onClick={handleBackArrow}>{category.toUpperCase()}</Title>
             <CategoryContainer>
-                {products && products.map((product) => <ProductCard key={product.id} product={product} />)}
+                {products && products.map((product) => <ProductCard key={product.id} cart={cart} product={product} />)}
             </CategoryContainer>
         </Fragment>
     );
