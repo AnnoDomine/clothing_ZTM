@@ -22,7 +22,7 @@ import { rootReducer } from "./rootReducer";
 const persisitConfig = {
     key: "root",
     storage,
-    blacklist: ["user", "categories", "cart"],
+    whitelist: ["cart"],
 };
 
 const persistedReducer = persistReducer(persisitConfig, rootReducer);
