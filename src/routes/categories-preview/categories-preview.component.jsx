@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import CategoryPreview from "../../components/category-preview/category-preview.component";
 import { categoriesSelector } from "../../store/categories/category.selector";
 

@@ -1,5 +1,4 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { setCategoriesMap } from "./category.action";
 import { CATEGORIES_ACTION_TYPE } from "./category.types";
 
 const INITIAL_STATE = {
