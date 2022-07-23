@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import logger from "redux-logger";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 import { rootReducer } from "./rootReducer";
 
@@ -16,9 +17,19 @@ const loggerMiddleware = (store) => (next) => (action) => {
     console.log("next state: ", store.getState());
 };
 
+const persisitConfig = {
+    key: "root",
+    storage,
+    blacklist: ["user"],
+};
+
+const persistedReducer = persistReducer(persisitConfig, rootReducer);
+
 export const store = configureStore({
-    reducer: rootReducer,
+    reducer: persistedReducer,
     middleware: [loggerMiddleware],
     devTools: true,
     preloadedState: undefined,
 });
+
+export const persistor = persistStore(store);
