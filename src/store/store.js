@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import thunk from "redux-thunk";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import logger from "redux-logger";
@@ -21,12 +22,12 @@ import { rootReducer } from "./rootReducer";
 const persisitConfig = {
     key: "root",
     storage,
-    blacklist: ["user"],
+    blacklist: ["user", "categories", "cart"],
 };
 
 const persistedReducer = persistReducer(persisitConfig, rootReducer);
 
-const middlewareArray = [process.env.NODE_ENV !== "production" && logger];
+const middlewareArray = [process.env.NODE_ENV !== "production" && logger, thunk];
 
 export const store = configureStore({
     reducer: persistedReducer,
