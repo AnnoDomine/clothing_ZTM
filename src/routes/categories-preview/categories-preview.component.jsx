@@ -4,7 +4,7 @@ import CategoryPreview from "../../components/category-preview/category-preview.
 import { categoriesSelector } from "../../store/categories/category.selector";
 
 const CategoriesPreview = () => {
-    const { categoriesMap } = useSelector(categoriesSelector);
+    const categoriesMap = useSelector(categoriesSelector);
 
     return (
         <Fragment>

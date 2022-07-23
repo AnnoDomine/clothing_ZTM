@@ -3,11 +3,11 @@ import { setCategoriesMap } from "./category.action";
 import { CATEGORIES_ACTION_TYPE } from "./category.types";
 
 const INITIAL_STATE = {
-    categoriesMap: {},
+    categories: [],
 };
 
 export const categoriesReducer = createReducer(INITIAL_STATE, (builder) => {
     builder.addCase(CATEGORIES_ACTION_TYPE.GET_CATEGORIES_AND_DOCUMENTS, (state, action) => {
-        return { ...state, categoriesMap: action.payload };
+        return { ...state, categories: action.payload };
     });
 });

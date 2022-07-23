@@ -8,7 +8,7 @@ import { CategoryContainer, Title } from "./category.styles";
 
 const Category = () => {
     const { category } = useParams();
-    const { categoriesMap } = useSelector(categoriesSelector);
+    const categoriesMap = useSelector(categoriesSelector);
     const navigate = useNavigate();
 
     const [products, setProducts] = useState(categoriesMap[category]);
