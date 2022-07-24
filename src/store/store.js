@@ -30,7 +30,7 @@ const middlewareArray = [process.env.NODE_ENV !== "production" && logger, sagaMi
 export const store = configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({ thunk: false, serializableCheck: false }).prepend(middlewareArray),
+        getDefaultMiddleware({ thunk: false, serializableCheck: false }).prepend(sagaMiddleware),
     devTools: process.env.NODE_ENV !== "production",
     preloadedState: undefined,
 });
