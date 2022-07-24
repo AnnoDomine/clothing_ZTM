@@ -10,13 +10,22 @@ const INITIAL_STATE = {
 
 export const categoriesReducer = createReducer(INITIAL_STATE, (builder) => {
     builder
-        .addCase(fetchCategories.pending, (state) => {
+        // .addCase(fetchCategories.pending, (state) => {
+        //     return { ...state, isLoading: true };
+        // })
+        // .addCase(fetchCategories.fulfilled, (state, action) => {
+        //     return { ...state, isLoading: false, categories: action.payload };
+        // })
+        // .addCase(fetchCategories.rejected, (state, action) => {
+        //     return { ...state, isLoading: false, error: action.payload };
+        // })
+        .addCase(CATEGORIES_ACTION_TYPE.FETCH_CATEGORIES_START, (state) => {
             return { ...state, isLoading: true };
         })
-        .addCase(fetchCategories.fulfilled, (state, action) => {
+        .addCase(CATEGORIES_ACTION_TYPE.FETCH_CATEGORIES_SUCCESS, (state, action) => {
             return { ...state, isLoading: false, categories: action.payload };
         })
-        .addCase(fetchCategories.rejected, (state, action) => {
+        .addCase(CATEGORIES_ACTION_TYPE.FETCH_CATEGORIES_FAILED, (state, action) => {
             return { ...state, isLoading: false, error: action.payload };
         });
 });
