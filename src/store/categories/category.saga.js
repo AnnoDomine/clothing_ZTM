@@ -1,7 +1,7 @@
 import { call, takeLatest, all, put } from "redux-saga/effects";
 
 import { CATEGORIES_ACTION_TYPE } from "./category.types";
-import { fetchCategoriesFailed, fetchCategoriesStart, fetchCategoriesSuccess } from "./category.action";
+import { fetchCategoriesFailed, fetchCategoriesSuccess } from "./category.action";
 
 import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
 
