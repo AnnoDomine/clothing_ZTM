@@ -4,17 +4,23 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+import { Elements } from "@stripe/react-stripe-js";
+
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import { store } from "./store/store";
+
+import { stripePromis } from "./utils/stripe/stripe.utils";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <Fragment>
         <Provider store={store}>
             <BrowserRouter>
-                <App />
+                <Elements stripe={stripePromis}>
+                    <App />
+                </Elements>
             </BrowserRouter>
         </Provider>
     </Fragment>
