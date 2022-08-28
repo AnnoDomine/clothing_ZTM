@@ -11,12 +11,12 @@ import {
 import { getFirestore, doc, getDoc, setDoc, collection, writeBatch, query, getDocs } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAmoLItPLKEahnXh_-UbwXnRCVD0gFx7ic",
+    apiKey: "XXXXXXXXXXXXXXXXXXXXXX",
     authDomain: "clkothingscurse.firebaseapp.com",
     projectId: "clkothingscurse",
     storageBucket: "clkothingscurse.appspot.com",
-    messagingSenderId: "642013394851",
-    appId: "1:642013394851:web:482f72bb5f38db66bacc16",
+    messagingSenderId: "XXXXXXXXXXXXX",
+    appId: "1XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX6",
 };
 
 // eslint-disable-next-line no-unused-vars
